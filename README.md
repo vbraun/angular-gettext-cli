@@ -1,18 +1,47 @@
-angular-gettext-cli
-===================
+angular-gettext-cmdline
+=======================
 
 A command line interface for angular-gettext-tools
 
-## Installation
+Note
+----
 
-`npm install angular-gettext-cli -g` for global using or
-`npm install angular-gettext-cli --save-dev` for local.
+This is a fork of https://github.com/huston007/angular-gettext-cli
+with incompatible command-line options. On the plus side, it also lets
+you perform the compilation step from the commandline.
 
-## Usage:
 
-`angular-gettext-cli  --files "./app/*.+(js|html)" --dest ./extract.pot --marker-name i18n`
+Installation
+------------
 
-## Parameters:
-    *. --files - an [glob](https://github.com/isaacs/node-glob) pattern to specify files to process
-    *. --dest - path to file to write extracted words.
-    *. --marker-name - a name of marker to search in js-files (see angular-gettext-tools)
+TODO: Doesn't work yet: `npm install angular-gettext-cmdline --save-dev`
+
+
+Usage
+-----
+
+Extract the translatable strings from the source file(s):
+
+   angular-gettext extract src/file.html bar/**/*.html` --output template.pot
+
+Then translate `template.pot`; The result is a a file `en.po` for the
+English translation and `fr.po` for the French translation,
+say. Compile it to javascript:
+
+    angular-gettext compile en.po fr.po --output gettext-module.js
+
+Then import it in your AngluarJs app.
+
+
+Online Help
+-----------
+
+    $ ./bin/angular-gettext
+    usage: angular-gettext {extract,compile} --output filename [file1 file2 ...]
+    
+    Available subcommands:
+        extract     Extract strings from sources and write them to a .pot file
+        compile     Compile .po files to javascript
+    
+    The input files can also be globs like www/**/*.html
+    

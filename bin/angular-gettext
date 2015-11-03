@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+path = require('path')
+fs = require('fs')
+lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib')
+
+cli = require(path.join(lib, 'cmdline.js'))
+
+cli.run()
+process.exit(0)

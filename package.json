@@ -3,19 +3,23 @@
   "version": "1.0.5",
   "description": "A command line interface for angular gettools",
   "bin": {
-    "angular-gettext-cli": "bin/gettext"
+    "angular-gettext": "bin/angular-gettext"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/huston007/angular-gettext-cli.git"
+    "url": "https://github.com/vbraun/angular-gettext-cli.git"
   },
   "keywords": [
     "Angular"
   ],
   "author": "Andrey Skladchikov",
+  "contributors": [{
+    "name": "Volker Braun",
+    "email": "vbraun.name@gmail.com"
+  }], 
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/huston007/angular-gettext-cli/issues"
@@ -24,6 +28,10 @@
   "dependencies": {
     "angular-gettext-tools": "2.1.0",
     "glob": "^4.3.1",
-    "minimist": "^1.1.0"
+    "minimist": "^1.1.0",
+    "minimist-subcommand": "^1.0.0"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.0.0"
   }
 }
